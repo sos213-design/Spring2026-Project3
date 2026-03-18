@@ -1,0 +1,87 @@
+/*Any background colors*/
+body.light{
+    background-color: white;
+    color: black;
+}
+body.dark{
+    background-color: #212529;
+    color: white;
+}
+body.sky{
+    background-color: skyblue;
+    color: black;
+}
+body.blue{
+    background-color: blue;
+    color: white;
+}
+
+/*Color Wheel*/
+#colorWheel{
+    background: linear-gradient(135deg, #ffffff, #333);
+    color: black;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 12px;
+    transition: 0.3s;  
+    float:right;
+}
+body.light #colorWheel {
+    background: linear-gradient(135deg, #ffffff, #333);
+    color: black;
+}
+body.dark #colorWheel {
+    background: linear-gradient(135deg, #333, #87CEEB);
+    color: white;
+}
+body.sky #colorWheel {
+    background: linear-gradient(135deg, #87CEEB, #1e3a8a);
+    color: black;
+}
+body.blue #colorWheel {
+    background: linear-gradient(135deg, #1e3a8a, #eeeeee);
+    color: white;
+}
+#colorWheel:active {
+    transform: scale(0.95);
+}
+#colorWheel:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+}
+
+#Title{
+    text-align: center;
+    
+}
+#Title:hover{
+    color: goldenrod;
+}
+
+
+body.light li a{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+body.dark li a{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+body.sky li a{
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+body.blue li a{
+    font-size: 25px;
+    text-decoration: none;
+    color: white;
+}
+body li a:hover{
+    color: goldenrod;
+}
+
+
