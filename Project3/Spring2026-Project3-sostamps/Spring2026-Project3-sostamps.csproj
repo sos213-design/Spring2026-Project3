@@ -25,4 +25,10 @@
       <Folder Include="Data\Migrations\" />
     </ItemGroup>
 
+    <ItemGroup>
+      <_ContentIncludedByDefault Remove="wwwroot\Pages\Add.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\Pages\Delete.html" />
+      <_ContentIncludedByDefault Remove="wwwroot\Pages\View.html" />
+    </ItemGroup>
+
 </Project>
