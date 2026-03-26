@@ -24,10 +24,10 @@ jobs:
           dotnet-version: '8.x'
 
       - name: Build with dotnet
-        run: dotnet build ./Spring2026-Project3/Project3/Spring2026-Project3-sostamps.csproj --configuration Release
+        run: dotnet build ./Project3/Spring2026-Project3-sostamps.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ./Spring2026-Project3/Project3/Spring2026-Project3-sostamps.csproj
+        run: dotnet publish ./Project3/Spring2026-Project3-sostamps.csproj
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
