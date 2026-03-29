@@ -1,0 +1,25 @@
+@model List<Spring2026_Project3_sostamps.Models.MovieTemp>
+
+<h1>Movies List</h1>
+
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Genre</th>
+        <th>Year</th>
+        <th>Actions</th>
+    </tr>
+    
+    @foreach (var movie in Model)
+    {
+        <tr>
+            <td>@movie.Title</td>
+            <td>@movie.Genre</td>
+            <td>@movie.Year</td>
+            <td>
+                <a href="/Movies/Edit/@movie.Id">Edit</a>
+                <a href="/Movies/Delete/@movie.Id">Delete</a>
+            </td>
+        </tr>
+    }
+</table>

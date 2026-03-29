@@ -1,17 +1,17 @@
 /*Any background colors*/
-body.light{
+div.light{
     background-color: white;
     color: black;
 }
-body.dark{
+div.dark{
     background-color: #212529;
     color: white;
 }
-body.sky{
+div.sky{
     background-color: skyblue;
     color: black;
 }
-body.blue{
+div.blue{
     background-color: #000088;
     color: white;
 }
@@ -27,19 +27,19 @@ body.blue{
     transition: 0.3s;  
     float:right;
 }
-body.light #colorWheel {
+div.light #colorWheel {
     background: linear-gradient(135deg, #ffffff, #333);
     color: black;
 }
-body.dark #colorWheel {
+div.dark #colorWheel {
     background: linear-gradient(135deg, #333, #87CEEB);
     color: white;
 }
-body.sky #colorWheel {
+div.sky #colorWheel {
     background: linear-gradient(135deg, #87CEEB, #1e3a8a);
     color: black;
 }
-body.blue #colorWheel {
+div.blue #colorWheel {
     background: linear-gradient(135deg, #1e3a8a, #eeeeee);
     color: white;
 }
@@ -57,18 +57,19 @@ body.blue #colorWheel {
     color: goldenrod;
 }
 
-#AddButt{
-    text-decoration: none;
-    background: red;
-    padding: 10px 25px;
-    border-radius: 20px;
-    border-block-color: lime;
+#AddButt.btn-outline-primary{
+    background: dodgerblue;
+    color: white;
     font-size: 12px;
+    padding: 10px 25px;
+    border-radius: 200px;
+    border: none;        /* removes default button border */
+    cursor: pointer;
 }
 
 #DelButt{
     text-decoration: none;
-    background: red;
+    background: dodgerblue;
     padding: 10px 25px;
     border-radius: 200px;
     font-size: 12px;
@@ -76,7 +77,7 @@ body.blue #colorWheel {
 }
 #ViewButt{
     text-decoration: none;
-    background: red;
+    background: dodgerblue;
     border: goldenrod;
     padding: 10px 25px;
     border-radius: 200px;

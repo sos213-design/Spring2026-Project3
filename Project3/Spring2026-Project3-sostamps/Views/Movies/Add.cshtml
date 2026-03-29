@@ -1,0 +1,37 @@
+@model Spring2026_Project3_sostamps.Models.MovieTemp
+
+<h1> Add a Movie</h1>
+
+<form asp-action="Add" method="post" enctype="multipart/form-data">
+    <div>
+        <label>Title</label>
+        <input asp-for="Title" />
+    </div>
+    
+    <div>
+        <label>Genre</label>
+        <input asp-for="Genre" />
+    </div>
+    
+    <div>
+        <label>Year</label>
+        <input asp-for="Year" type="number" />
+    </div>
+    
+    <div>
+        <label>IMDB Link</label>
+        <input asp-for="IMDBLink" />
+    </div>
+    
+    <div>
+        <label>Poster</label>
+        <input type="file" name="posterFile" />
+    </div>
+    
+    <br>
+    
+    <button type="submit">Add Movie</button>
+    
+</form>
+
+<a href="/Home/Index">Return Home</a>
