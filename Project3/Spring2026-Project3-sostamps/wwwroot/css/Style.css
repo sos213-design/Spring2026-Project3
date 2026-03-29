@@ -50,38 +50,38 @@ body.blue #colorWheel {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
-
 #Title{
-    text-align: center;
-    
+    /*align-content: center;*/
 }
 #Title:hover{
     color: goldenrod;
 }
 
+#AddButt{
+    text-decoration: none;
+    background: red;
+    padding: 10px 25px;
+    border-radius: 20px;
+    border-block-color: lime;
+    font-size: 12px;
+}
 
-body.light li a{
-    font-size: 25px;
+#DelButt{
     text-decoration: none;
-    color: black;
+    background: red;
+    padding: 10px 25px;
+    border-radius: 200px;
+    font-size: 12px;
+    align-items: center;
 }
-body.dark li a{
-    font-size: 25px;
+#ViewButt{
     text-decoration: none;
-    color: white;
-}
-body.sky li a{
-    font-size: 25px;
-    text-decoration: none;
-    color: black;
-}
-body.blue li a{
-    font-size: 25px;
-    text-decoration: none;
-    color: white;
-}
-body li a:hover{
-    color: goldenrod;
+    background: red;
+    border: goldenrod;
+    padding: 10px 25px;
+    border-radius: 200px;
+    font-size: 12px;
+    float: right;
 }
 
 
