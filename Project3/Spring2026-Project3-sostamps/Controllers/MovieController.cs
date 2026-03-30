@@ -40,4 +40,26 @@ public class MoviesController : Controller
         
         return RedirectToAction(nameof(Index));
     }
+
+    public IActionResult Delete(int id)
+    {
+        var movies = _context.Movies.ToList();
+        return View(movies);
+    }
+
+    [HttpPost]
+    public IActionResult DeleteSelected(List<int> selectedIds)
+    {
+        if (selectedIds != null && selectedIds.Count > 0)
+        {
+            var moviesToDelete = _context.Movies
+                .Where(m => selectedIds.Contains(m.Id))
+                .ToList();
+            
+            _context.Movies.RemoveRange(moviesToDelete);
+            _context.SaveChanges();
+        }
+        return RedirectToAction("Index");
+    }
+    
 }

@@ -1,0 +1,33 @@
+@model List<Spring2026_Project3_sostamps.Models.MovieTemp>
+
+<h1>Movies List</h1>
+
+<form asp-action="DeleteSelected" method="post">
+    
+    <table>
+        <tr>
+            <th>Select</th>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Year</th>
+        </tr>
+        
+        @foreach (var movie in Model)
+        {
+            <tr>
+                <td>
+                    <input type="checkbox" name="SelectID" value="@movie.Id"/>
+                </td>
+                <td>@movie.Title</td>
+                <td>@movie.Genre</td>
+                <td>@movie.Year</td>
+
+            </tr>
+        }
+    </table>
+    <br>
+    
+    <button type="submit">Delete Selected</button>
+</form>
+
+<a href="/Home/Index">Return Home</a>
