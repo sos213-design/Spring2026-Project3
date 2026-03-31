@@ -30,7 +30,6 @@ public class ActorsController : Controller
     {
         return View();
     }
-
     [HttpPost]
     public async Task<IActionResult> Add(ActorTemp actor)
     {
@@ -46,5 +45,25 @@ public class ActorsController : Controller
         return RedirectToAction(nameof(Index));
     }
     
-    
+    //Delete
+    public IActionResult Delete(int id)
+    {
+        var actors = _context.Actors.ToList();
+        return View(actors);
+    }
+
+    [HttpPost]
+    public IActionResult DeleteSelected(List<int> selectedIds)
+    {
+        if (selectedIds != null && selectedIds.Count > 0)
+        {
+            var actorstoDelete =  _context.Actors
+                .Where(a => selectedIds.Contains(a.Id))
+                .ToList();
+            
+            _context.Actors.RemoveRange(actorstoDelete);
+            _context.SaveChanges();
+        }
+        return RedirectToAction("Index");
+    }
 }

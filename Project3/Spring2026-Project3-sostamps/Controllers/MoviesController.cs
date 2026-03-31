@@ -31,7 +31,6 @@ public class MoviesController : Controller
     {
         return View();
     }
-
     [HttpPost]
     public async Task<IActionResult> Add(MovieTemp movie, IFormFile posterFile)
     {
@@ -49,6 +48,7 @@ public class MoviesController : Controller
         return RedirectToAction(nameof(Index));
     }
 
+    
     // Delete
     public IActionResult Delete(int id)
     {
