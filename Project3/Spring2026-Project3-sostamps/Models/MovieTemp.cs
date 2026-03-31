@@ -8,5 +8,5 @@ public class MovieTemp
     public int Year { get; set; }
     public required string IMDBLink { get; set; }
     public required byte[] Poster { get; set; }
-    public string Actors { get; set; }
+    public required string Actors { get; set; }
 }
