@@ -1,14 +1,22 @@
-function DModeCycle(){
+document.addEventListener("DOMContentLoaded", function () {
     const wheel = document.getElementById("colorWheel");
-    
     const themes = ["light", "dark", "sky", "blue"];
-    let index = 0;
-    
-    wheel.addEventListener("click", function(){
-        document.body.classList.remove(themes[index]);
-        index = (index + 1) % themes.length;
-        document.body.classList.add(themes[index]);
-    });
-}
-DModeCycle();
+
+    let currentTheme = localStorage.getItem("theme") || "light";
+    document.body.className = currentTheme;
+
+    let index = themes.indexOf(currentTheme);
+
+    if (wheel) {
+        wheel.addEventListener("click", function () {
+            index = (index + 1) % themes.length;
+            document.body.className = themes[index];
+
+            localStorage.setItem("theme", themes[index]);
+        });
+    }
+});
+
+
+
 

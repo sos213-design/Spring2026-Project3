@@ -51,13 +51,8 @@ body.blue #colorWheel {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
-#Title{
-    /*align-content: center;*/
-}
-#Title:hover{
-    color: goldenrod;
-}
 
+/*Add Button*/
 body.light #AddButt,
 body.sky #AddButt{
     text-decoration: none;
@@ -66,15 +61,16 @@ body.sky #AddButt{
     padding: 5px 10px;
     background-color:#00ab41;
 }
-
 body.dark #AddButt,
 body.blue #AddButt{
     text-decoration: none;
     color: white;
     border-radius: 25px;
     padding: 5px 10px;
-    background-color:#00ab41;
+    background-color:#3a785f;
 }
+
+/*View Button*/
 body.light #ViewButt,
 body.sky #ViewButt{
     text-decoration: none;
@@ -83,7 +79,6 @@ body.sky #ViewButt{
     padding: 5px 10px;
     background-color:#00ab41;
 }
-
 body.dark #ViewButt,
 body.blue #ViewButt {
     text-decoration: none;
@@ -93,6 +88,7 @@ body.blue #ViewButt {
     background-color: #3a785f;
 }
 
+/*Delete Button*/
 body.light #DelButt,
 body.sky #DelButt{
     text-decoration: none;
@@ -101,7 +97,6 @@ body.sky #DelButt{
     padding: 5px 10px;
     background-color:#00ab41;
 }
-
 body.dark #DelButt,
 body.blue #DelButt {
     text-decoration: none;
