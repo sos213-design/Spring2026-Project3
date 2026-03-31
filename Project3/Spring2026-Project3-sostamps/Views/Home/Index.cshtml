@@ -1,26 +1,6 @@
 ﻿@{
     ViewData["Title"] = "Movie@You";
 }
-
-    <meta charset="UTF-8">
-    <title>Movies@You</title>
-    <!-- jQuery -->
-    <script
-        src="https://code.jquery.com/jquery-3.6.4.min.js"
-        integrity="sha256-o88Awf4L7U8Gk3g9FjC4Y9E+u6KDAdM8X1sC3yRlmEw="
-        crossorigin="anonymous"></script>
-
-    <!-- jQuery UI CSS -->
-    <link
-        rel="stylesheet"
-        href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css"
-        integrity="sha256-lHWg1YpUuH0z7LxyzKDn5XxhxL7sRKqzZo4PM5XgS5E="
-        crossorigin="anonymous">
-    
-    <!-- CSS Code -->
-    <link rel="stylesheet" href = "~/css/Style.css"><link>
-    
-<div class ="light">
 <button id = "colorWheel"> Change Theme </button>
 <h1 id="Title">Welcome to Movie@You</h1>
 
@@ -29,8 +9,10 @@
    
 
 
-    <a href="/Movies/Add">Add A Movie</a>
-    <a href="/Movies/View">View Movies</a>
+    <a id="AddButt" href="/Movies/Add">Add A Movie</a>
+    <a id="ViewButt"href="/Movies/View">View Movies</a>
+    <a id="DelButt" href="/Movies/Delete">Delete Movies</a>
+    
 
     
 
@@ -38,14 +20,3 @@
 
 
 </div>    
-<!--JS Code-->
-<script src = "~/js/Function.js" defer></script>
-    
-<!-- jQuery UI JS -->
-<script
-    src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
-    integrity="sha256-lYX1JpN96CBvs1+qsSVqS+8CA0nVddOZXS6jttuPAHY="
-    crossorigin="anonymous"></script>
-
-
-</div>

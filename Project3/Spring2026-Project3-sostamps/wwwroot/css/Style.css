@@ -1,17 +1,17 @@
 /*Any background colors*/
-div.light{
+body.light{
     background-color: white;
     color: black;
 }
-div.dark{
+body.dark{
     background-color: #212529;
     color: white;
 }
-div.sky{
+body.sky{
     background-color: skyblue;
     color: black;
 }
-div.blue{
+body.blue{
     background-color: #000088;
     color: white;
 }
@@ -27,19 +27,19 @@ div.blue{
     transition: 0.3s;  
     float:right;
 }
-div.light #colorWheel {
+body.light #colorWheel {
     background: linear-gradient(135deg, #ffffff, #333);
     color: black;
 }
-div.dark #colorWheel {
+body.dark #colorWheel {
     background: linear-gradient(135deg, #333, #87CEEB);
     color: white;
 }
-div.sky #colorWheel {
+body.sky #colorWheel {
     background: linear-gradient(135deg, #87CEEB, #1e3a8a);
     color: black;
 }
-div.blue #colorWheel {
+body.blue #colorWheel {
     background: linear-gradient(135deg, #1e3a8a, #eeeeee);
     color: white;
 }
@@ -50,6 +50,7 @@ div.blue #colorWheel {
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
+
 #Title{
     /*align-content: center;*/
 }
@@ -57,32 +58,55 @@ div.blue #colorWheel {
     color: goldenrod;
 }
 
-#AddButt.btn-outline-primary{
-    background: dodgerblue;
+body.light #AddButt,
+body.sky #AddButt{
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color:#00ab41;
+}
+
+body.dark #AddButt,
+body.blue #AddButt{
+    text-decoration: none;
     color: white;
-    font-size: 12px;
-    padding: 10px 25px;
-    border-radius: 200px;
-    border: none;        /* removes default button border */
-    cursor: pointer;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color:#00ab41;
 }
-
-#DelButt{
+body.light #ViewButt,
+body.sky #ViewButt{
     text-decoration: none;
-    background: dodgerblue;
-    padding: 10px 25px;
-    border-radius: 200px;
-    font-size: 12px;
-    align-items: center;
+    color: black;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color:#00ab41;
 }
-#ViewButt{
+
+body.dark #ViewButt,
+body.blue #ViewButt {
     text-decoration: none;
-    background: dodgerblue;
-    border: goldenrod;
-    padding: 10px 25px;
-    border-radius: 200px;
-    font-size: 12px;
-    float: right;
+    color: white;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: #3a785f;
 }
 
+body.light #DelButt,
+body.sky #DelButt{
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color:#00ab41;
+}
 
+body.dark #DelButt,
+body.blue #DelButt {
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: #3a785f;
+}
