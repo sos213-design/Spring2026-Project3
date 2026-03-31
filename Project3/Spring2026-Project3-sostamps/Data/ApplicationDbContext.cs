@@ -11,4 +11,6 @@ public class ApplicationDbContext : IdentityDbContext
     {
     }
     public DbSet<MovieTemp> Movies { get; set; }
+    public DbSet<ActorTemp> Actors { get; set; }
+    
 }

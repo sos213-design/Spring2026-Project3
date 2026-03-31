@@ -1,0 +1,26 @@
+@model List<Spring2026_Project3_sostamps.Models.ActorTemp>
+
+<h1>Student List</h1>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Movies</th>
+        <th>Actions</th>
+    </tr>
+    
+    @foreach (var actor in Model)
+    {
+        <tr>
+            <td>@actor.Name</td>
+            <td>@actor.Movies</td>
+            <td>
+                <a href="/Actors/Delete/@actor.Id">Delete</a>
+                <a href="/Actors/Details/@actor.Id">Details</a>
+            </td>
+        </tr>
+    }
+</table>
+
+<a href="/Actors/Add">Add Another</a>
+<a href="/Home/Index">Return Home</a>

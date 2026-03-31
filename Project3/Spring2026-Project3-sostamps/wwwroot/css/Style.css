@@ -51,6 +51,16 @@ body.blue #colorWheel {
     box-shadow: 0 6px 15px rgba(0,0,0,0.2);
 }
 
+/*Title*/
+#Title{
+    text-align: center;
+    flex-wrap: wrap;
+}
+
+p{  
+    text-align: center;
+    flex-wrap: wrap;
+}
 
 /*Add Button*/
 body.light #AddButt,
@@ -60,6 +70,7 @@ body.sky #AddButt{
     border-radius: 25px;
     padding: 5px 10px;
     background-color:#00ab41;
+    flex-wrap: wrap;
 }
 body.dark #AddButt,
 body.blue #AddButt{
@@ -68,6 +79,7 @@ body.blue #AddButt{
     border-radius: 25px;
     padding: 5px 10px;
     background-color:#3a785f;
+    flex-wrap: wrap;
 }
 
 /*View Button*/
@@ -78,6 +90,8 @@ body.sky #ViewButt{
     border-radius: 25px;
     padding: 5px 10px;
     background-color:#00ab41;
+    text-align: center;
+    flex-wrap: wrap;
 }
 body.dark #ViewButt,
 body.blue #ViewButt {
@@ -86,6 +100,8 @@ body.blue #ViewButt {
     border-radius: 25px;
     padding: 5px 10px;
     background-color: #3a785f;
+    text-align: center;
+    flex-wrap: wrap;
 }
 
 /*Delete Button*/
@@ -96,6 +112,8 @@ body.sky #DelButt{
     border-radius: 25px;
     padding: 5px 10px;
     background-color:#00ab41;
+    text-align: center;
+    float: right;
 }
 body.dark #DelButt,
 body.blue #DelButt {
@@ -104,4 +122,65 @@ body.blue #DelButt {
     border-radius: 25px;
     padding: 5px 10px;
     background-color: #3a785f;
+    float: right;
 }
+
+
+/*Add Button Actor*/
+body.light #AddButtAct,
+body.sky #AddButtAct{
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color:#00ab41;
+}
+body.dark #AddButtAct,
+body.blue #AddButtAct{
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: #2e9f9f;
+}
+
+/*View Button Actor*/
+body.light #ViewButtAct,
+body.sky #ViewButtAct{
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color:#00ab41;
+    
+}
+body.dark #ViewButtAct,
+body.blue #ViewButtAct {
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: #2e9f9f;
+}
+
+/*Delete Button Actor*/
+body.light #DelButtAct,
+body.sky #DelButtAct{
+    text-decoration: none;
+    color: black;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color:#00ab41;
+    float: right;
+}
+body.dark #DelButtAct,
+body.blue #DelButtAct {
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    padding: 5px 10px;
+    background-color: #2e9f9f;
+    float: right;
+}
+
+#Split{border: dashed 1px;}

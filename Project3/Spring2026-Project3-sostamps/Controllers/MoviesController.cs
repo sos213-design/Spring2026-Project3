@@ -3,24 +3,30 @@ using Spring2026_Project3_sostamps.Models.DetailModels;
 using Spring2026_Project3_sostamps.Models;
 using Spring2026_Project3_sostamps.Data;
 using VaderSharp2;
+using Azure.AI.OpenAI;
+using OpenAI.Chat;
 
 namespace Spring2026_Project3_sostamps.Controllers;
 
 public class MoviesController : Controller
 {
     private readonly ApplicationDbContext _context;
+    private readonly IConfiguration _configuration;
     
-    public MoviesController(ApplicationDbContext context)
+    public MoviesController(ApplicationDbContext context, IConfiguration configuration)
     {
         _context = context;
+        _configuration = configuration;
     }
     
+    //View
     public IActionResult Index()
     {
         var movies = _context.Movies.ToList();
         return View(movies);
     }
-    //Add
+
+    // Add
     public IActionResult Add()
     {
         return View();
@@ -42,7 +48,8 @@ public class MoviesController : Controller
         
         return RedirectToAction(nameof(Index));
     }
-//Delete
+
+    // Delete
     public IActionResult Delete(int id)
     {
         var movies = _context.Movies.ToList();
@@ -64,6 +71,7 @@ public class MoviesController : Controller
         return RedirectToAction("Index");
     }
 
+    // Reviews & Details
     public async Task<IActionResult> Details(int id)
     {
         var movie = _context.Movies.FirstOrDefault(m => m.Id == id);
@@ -72,21 +80,35 @@ public class MoviesController : Controller
         {
             return NotFound();
         }
-
-        //Todo: Call AI need to set up
-        List<string> reviews = new List<string>
-        {
-            "Amazing movie with great acting.",
-            "A bit confusing but very creative.",
-            "Fantastic visuals and storytelling.",
-            "Too complex for casual viewers.",
-            "One of the best movies ever made."
-        };
         
-        //Positivity Analyzer
+        // AI Reviews
+        var apiKey = _configuration["OpenAI:ApiKey"];
+        var endpoint = _configuration["OpenAI:Endpoint"];
+
+        var azureClient = new AzureOpenAIClient(
+            new Uri(endpoint),
+            new System.ClientModel.ApiKeyCredential(apiKey)
+        );
+
+        var chatClient = azureClient.GetChatClient("gpt-4o-mini");
+
+        var response = await chatClient.CompleteChatAsync(new[]
+        {
+            new UserChatMessage(
+                $"Generate 5 reviews for movie {movie.Title}. Make some serious and some funny. Make them no more than 3 sentences.")
+        });
+
+        string result = response.Value.Content[0].Text;
+
+        var reviews = result.Split('\n')
+            .Where(r => !string.IsNullOrWhiteSpace(r))
+            .Take(5)
+            .ToList();
+        
+        // Positivity Analyzer
         var analyzer = new SentimentIntensityAnalyzer();
         
-        var reviewData  = reviews.Select(r => new Review()
+        var reviewData = reviews.Select(r => new Review()
         {
             Text = r,
             Rating = analyzer.PolarityScores(r).Compound
@@ -100,6 +122,7 @@ public class MoviesController : Controller
             Reviews = reviewData,
             Rating = avgReview
         };
+
         return View(vm);
     }
 }
