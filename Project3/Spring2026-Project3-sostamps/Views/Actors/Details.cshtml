@@ -1,0 +1,51 @@
+@model Spring2026_Project3_sostamps.Models.ActDetailModel.Details
+
+<h1>@Model.Actor.Name</h1>
+
+<p><strong>Gender: </strong> @Model.Actor.Gender</p>
+<p><strong>Age: </strong> @Model.Actor.Age</p>
+
+<!--IMDB Link-->
+<p>
+    <a href="@Model.Actor.IMDBLink" target="_blank">View on IMDB</a>
+</p>
+
+<!--Poster Link-->
+@if (Model.Actor.Portrait != null)
+{
+    <img style="width:200px;"
+         src="data:image/png;base64,@Convert.ToBase64String(Model.Actor.Portrait)"/>
+}
+
+<hr/>
+
+<!--Moviess-->
+<h3><strong>Movies</strong></h3>
+<ul>
+    @foreach (var movies in Model.Actor.Movies.Split(','))
+    {
+        <li>@movies.Trim()</li>
+    }
+</ul>
+
+<hr/>
+
+<!--Tweets-->
+<h3><strong>Average Rating: </strong>@Model.Rating</h3>
+<table>
+    <tr>
+        <th>Review</th>
+        <th>Ratings</th>
+    </tr>
+    
+    @foreach (var r in Model.Tweets)
+    {
+        <tr>
+            <td>@r.Tweet</td>
+            <td>@r.Rating</td>
+        </tr>
+    }
+</table>
+
+<a href="/Actors/Index">Return to List</a>
+<a href="/Home/Index">Return Home</a>

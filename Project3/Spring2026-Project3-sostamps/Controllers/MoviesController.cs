@@ -90,7 +90,7 @@ public class MoviesController : Controller
             new System.ClientModel.ApiKeyCredential(apiKey)
         );
 
-        var chatClient = azureClient.GetChatClient("gpt-4o-mini");
+        var chatClient = azureClient.GetChatClient("gpt-4.1-mini");
 
         var response = await chatClient.CompleteChatAsync(new[]
         {
