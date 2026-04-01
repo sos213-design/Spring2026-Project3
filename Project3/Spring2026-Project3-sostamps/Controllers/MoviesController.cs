@@ -95,7 +95,7 @@ public class MoviesController : Controller
         var response = await chatClient.CompleteChatAsync(new[]
         {
             new UserChatMessage(
-                $"Generate 5 reviews for movie {movie.Title}. Make some serious and some funny. Make them no more than 3 sentences.")
+                $"Generate 5 reviews for movie {movie.Title}. Make some serious and some funny. Make them no more than 3 sentences. Do Not Number or List them as serious or funny.")
         });
 
         string result = response.Value.Content[0].Text;
