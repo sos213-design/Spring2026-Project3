@@ -12,5 +12,13 @@ public class ApplicationDbContext : IdentityDbContext
     }
     public DbSet<MovieTemp> Movies { get; set; }
     public DbSet<ActorTemp> Actors { get; set; }
+    public DbSet<MovieActor> MovieActors { get; set; }
     
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        base.OnModelCreating(modelBuilder);
+
+        modelBuilder.Entity<MovieActor>()
+            .HasKey(ma => new { ma.MovieId, ma.ActorId });
+    }
 }

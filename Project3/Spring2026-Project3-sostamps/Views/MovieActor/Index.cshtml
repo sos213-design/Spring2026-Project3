@@ -1,0 +1,31 @@
+@model List<MovieActor>
+
+<h2>Actor-Movie Relationships</h2>
+
+<a asp-action="Create">Add Relationship</a>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>Movie</th>
+        <th>Actor</th>
+        <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.Movie.Title</td>
+            <td>@item.Actor.Name</td>
+            <td>
+                <a asp-action="Delete"
+                   asp-route-movieId="@item.MovieId"
+                   asp-route-actorId="@item.ActorId">
+                    Delete
+                </a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>

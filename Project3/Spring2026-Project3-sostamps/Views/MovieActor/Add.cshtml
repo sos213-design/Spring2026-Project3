@@ -1,0 +1,26 @@
+<h2>Add Actor to Movie</h2>
+
+<form asp-action="Add" method="post">
+
+    <label>Movie</label>
+    <select name="movieId">
+        @foreach (var movie in ViewBag.Movies)
+        {
+            <option value="@movie.Id">@movie.Title</option>
+        }
+    </select>
+
+    <br /><br />
+
+    <label>Actor</label>
+    <select name="actorId">
+        @foreach (var actor in ViewBag.Actors)
+        {
+            <option value="@actor.Id">@actor.Name</option>
+        }
+    </select>
+
+    <br /><br />
+
+    <button type="submit">Add</button>
+</form>

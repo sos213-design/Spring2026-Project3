@@ -52,9 +52,9 @@ body.blue #colorWheel {
 }
 
 /*Title*/
-#Title{
-    text-align: center;
-    flex-wrap: wrap;
+.title-container {
+    display: flex;
+    justify-content: center;
 }
 
 p{  
@@ -71,6 +71,7 @@ body.sky #AddButt{
     padding: 5px 10px;
     background-color:#00ab41;
     flex-wrap: wrap;
+    float: left;
 }
 body.dark #AddButt,
 body.blue #AddButt{
@@ -80,6 +81,7 @@ body.blue #AddButt{
     padding: 5px 10px;
     background-color:#3a785f;
     flex-wrap: wrap;
+    float: left;
 }
 
 /*View Button*/
@@ -134,7 +136,10 @@ body.sky #AddButtAct{
     border-radius: 25px;
     padding: 5px 10px;
     background-color:#00ab41;
+    flex-wrap: wrap;
+    float: left;
 }
+
 body.dark #AddButtAct,
 body.blue #AddButtAct{
     text-decoration: none;
@@ -142,8 +147,10 @@ body.blue #AddButtAct{
     border-radius: 25px;
     padding: 5px 10px;
     background-color: #2e9f9f;
+    flex-wrap: wrap;
+    float: left;
 }
-
+    
 /*View Button Actor*/
 body.light #ViewButtAct,
 body.sky #ViewButtAct{
@@ -184,3 +191,30 @@ body.blue #DelButtAct {
 }
 
 #Split{border: dashed 1px;}
+
+#Split2{border: dashed 1px;}
+
+/* LIGHT + SKY */
+body.light #MovieActorButt,
+body.sky #MovieActorButt {
+    text-decoration: none;
+    color: white;
+    border-radius: 25px;
+    padding: 8px 16px;
+    background-color: #6c63ff; /* purple */
+}
+
+/* DARK + BLUE */
+body.dark #MovieActorButt,
+body.blue #MovieActorButt {
+    text-decoration: none;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    background-color: #ff9800; /* orange */
+}
+
+.center-btn {
+    text-align: center;
+    margin-top: 20px;
+}

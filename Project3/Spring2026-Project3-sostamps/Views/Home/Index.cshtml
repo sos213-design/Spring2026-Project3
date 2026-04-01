@@ -2,27 +2,38 @@
     ViewData["Title"] = "Movie@You";
 }
 <button id = "colorWheel"> Change Theme </button>
-<h1 id="Title">Welcome to Movie@You</h1>
+<div class="title-container">
+    <h1 id="Title" class="text-center">Welcome to Movie@You</h1>
+</div>
 
-<div>
-    <p class="text-center">Text Goes Here once I figure this out</p>
+<div class="center-btn">
+    <p class="text-center">
+        This website has a database of Actors and Movies
+    </p>
    
 
 
     <a id="AddButt" href="/Movies/Add">Add A Movie</a>
-    <a id="ViewButt"href="/Movies/Index">View Movies</a>
+    <a id="ViewButt"href="/Movies/Index" >View Movies</a>
     <a id="DelButt" href="/Movies/Delete">Delete Movies</a>
     
 </div>
 <br/>
 <hr id="Split"/>
 <br/>
-<div>
+<div class="center-btn">
     
     <a id="AddButtAct" href="/Actors/Add">Add an Actor</a>
-    <a id="ViewButtAct"href="/Actors/Index">View an Actor</a>
+    <a id="ViewButtAct" href="/Actors/Index" class="center-btn">View an Actor</a>
     <a id="DelButtAct" href="/Actors/Delete">Delete an Actor</a>
+</div>
+<br/>
 
+<hr id="Split2" /> 
+<div class="center-btn">
+    <a id="MovieActorButt" href="/MovieActor/Index">
+        Manage Actor-Movie Relationships
+    </a>
 </div>
 <br/><br/>
-<hr/>
+<hr />
