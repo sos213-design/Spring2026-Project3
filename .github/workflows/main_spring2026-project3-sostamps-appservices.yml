@@ -62,5 +62,4 @@ jobs:
           app-name: 'Spring2026-Project3-sostamps-AppServices'
           slot-name: 'Production'
           package: .
-          package: .
           
