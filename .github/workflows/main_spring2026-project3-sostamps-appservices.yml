@@ -23,11 +23,12 @@ jobs:
         with:
           dotnet-version: '8.x'
 
-      - name: Build with dotnet
-        run: dotnet build ./Project3/Spring2026-Project3-sostamps/ --configuration Release
+        - name: Build with dotnet
+        run: dotnet build ./Project3/Spring2026-Project3-sostamps/Spring2026-Project3-sostamps.csproj --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ./Project3/Spring2026-Project3-sostamps/
+        run: dotnet publish ./Project3/Spring2026-Project3-sostamps/Spring2026-Project3-sostamps.csprojj -c Release -o "${{env.DOTNET_ROOT}}/myapp"
+        
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
